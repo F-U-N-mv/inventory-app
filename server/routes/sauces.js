@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Sauce } = require("../models");
+const { Sauce } = require("../models/index");
 
 // GET /sauce
 router.get("/", async (req, res, next) => {
