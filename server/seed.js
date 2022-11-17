@@ -1,8 +1,8 @@
-const {sauces, items} = require('./seedData.js');
+const { sauces, items} = require('./seedData.js'); // removed `sauces` import
 
 const {sequelize} = require('./db');
-const {Sauce} = require('./models');
-
+const {Sauce, Item} = require('./models/index');
+// const {Item} = require('./models/Item');
 const seed = async () => {
 
     try {
