@@ -17,5 +17,14 @@ export const Item = ({item, isSinglePageView, setSinglePageView, setItemObjectTi
     <p>{item.price}</p>
     <p>{item.description}</p>
     <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
+    <UpdateForm 
+    isAddingItem={isAddingItem}
+    setIsAddingItem={setIsAddingItem}
+    items={items}
+    setItems={setItems}
+    newItem={newItem}
+    setNewItem={setNewItem}
+    fetchItems={fetchItems}
+    />
   </>
 } 

@@ -24,3 +24,20 @@ onClick={()=> handleClick2()}
   //   const updateItem = await res.json();
   //   setNewItem(updateItem);
   // };
+
+  const handleDelete = async () => {
+    const response = await fetch(`${apiURL}/items/${props.item.id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    })
+    const deleteItem = await response.json()
+    // setNewItem(deleteItem);
+    setIsAddingItem(false);
+  };
+
+   <button onClick={handleUpdate}>Update Item</button>
+    {/* <button onClick={() => handleDelete()}>Delete Item</button> should be on item page {} */ }
+
+    
