@@ -1,0 +1,11 @@
+{(ev) => setNewItem({...newItem, title: ev.target.value})}
+
+{(ev) => setNewItem({...newItem, price: ev.target.value})}
+
+{(ev) => setNewItem({...newItem, description: ev.target.value})}
+{(ev) => setNewItem({...newItem, category: ev.target.value})}
+{(ev) => setNewItem({...newItem, image: ev.target.value})}
+
+setNewItem(updateItem)
+onChange={handleChange}
+onClick={()=> handleClick2()}

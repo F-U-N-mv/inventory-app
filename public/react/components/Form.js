@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import apiURL from "../api";
 
-export function Form({setItems, isAddingItem, setIsAddingItem, fetchItems}) {
+export function Form({items, setItems, isAddingItem, setIsAddingItem, fetchItems}) {
 
   const [newItem, setNewItem] = useState({
     title: "",
@@ -38,6 +38,41 @@ export function Form({setItems, isAddingItem, setIsAddingItem, fetchItems}) {
       image: ""
     });
   };
+
+  // Update the item, should work for all 
+  // const handleUpdate = async (id) => {
+  //   const res = await fetch(`${apiURL}/items/${id}`, {
+  //     method: 'PATCH',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }, 
+  //     body: JSON.stringify({
+  //       description: ''
+  //     })
+  //   });
+  //   const updateItem = await res.json();
+  //   setNewItem(updateItem);
+  // };
+      
+  const handleUpdate = (ev) => {
+    const updateItem = {
+      ...newItem,
+      [ev.target.description]: ev.target.value
+    }
+    // const itemsOne = [...items].map(itemObject => { 
+
+    // })
+    
+    setItems(updateItem);
+  }
+
+  const handleDelete = async (id) => {
+    const res = await fetch (`${apiURL}/items/${id}`)
+    const deletedItem = await res.json()
+    setItems(deletedItem)
+    setIsAddingItem(false);
+  }
+   
 
   return (
     <>
@@ -89,7 +124,9 @@ export function Form({setItems, isAddingItem, setIsAddingItem, fetchItems}) {
         ></input>
       <br></br>
       <button type="submit">Add New Item</button>
-    </form>
+      <br></br>
+</form>
+    <button onClick={() => handleDelete()}>Delete Item</button>
     </>
   )
 }
