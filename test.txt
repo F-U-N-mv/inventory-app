@@ -9,3 +9,18 @@
 setNewItem(updateItem)
 onChange={handleChange}
 onClick={()=> handleClick2()}
+
+ // Update the item, should work for all 
+  // const handleUpdate = async (id) => {
+  //   const res = await fetch(`${apiURL}/items/${id}`, {
+  //     method: 'PATCH',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }, 
+  //     body: JSON.stringify({
+  //       description: ''
+  //     })
+  //   });
+  //   const updateItem = await res.json();
+  //   setNewItem(updateItem);
+  // };

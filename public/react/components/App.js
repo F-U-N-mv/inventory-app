@@ -11,6 +11,7 @@ export const App = () => {
 	const [isSinglePageView, setSinglePageView] = useState(false);
 	const [itemObjectTitle, setItemObjectTitle] = useState('');
 	const [isAddingItem, setIsAddingItem] = useState(false);
+
 	
 	
 	async function fetchItems(){
