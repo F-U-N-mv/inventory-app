@@ -3,39 +3,53 @@ import apiURL from "../api";
 
 
 export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddingItem, fetchItems}) {
+   
+  const [titleUpdate, setTitleUpdate] = useState(''); // state to update title
+  const [priceUpdate, setPriceUpdate] = useState(''); // state to update price
+  const [descUpdate, setDescUpdate] = useState('');// state to update description
+  const [catUpdate, setCatUpdate] = useState(''); // state to update cateogry
+  const [imgUpdate, setImgUpdate] = useState(''); //state to update the image
 
 
    // Update the item, should work for all 
-  const handleUpdate = async (id) => {
+  const handleUpdateSubmit = async (ev) => {
+    ev.preventDefault();
+    const updateItemInfo = {
+      title: titleUpdate,
+      price: priceUpdate,
+      description: descUpdate,
+      category: catUpdate,
+      image: imgUpdate
+    }
     const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
       }, 
       body: JSON.stringify({
-        title: '',
-        price: '',
-        description: '',
-        category: '',
-        image: ''
+        updateItemInfo
 
       })
     });
-    const updateItem = await res.json();
-    setNewItem(updateItem);
+    const data = await res.json();
+    setTitleUpdate(titleUpdate); //set updated title to title
+    setPriceUpdate(priceUpdate); // set updated price to price
+    setDescUpdate(descUpdate); // set updated description to desc
+    setCatUpdate(catUpdate); // set updated category to category
+    setImgUpdate(imgUpdate); // set image update to image 
   };
 
-  const handleUpdateSubmit = (ev) => {
-    ev.preventDefault();
-    handleUpdate(newItem);
-    setNewItem({
-      title: "",
-      price: "",
-      description: "", 
-      category: "",
-      image: ""
-    });
-  };
+  // const handleUpdateSubmit = (ev) => {
+  //   ev.preventDefault();
+  //   handleUpdate(newItem);
+  //   setNewItem({
+  //     title: "",
+  //     price: "",
+  //     description: "", 
+  //     category: "",
+  //     image: ""
+  //   });
+  // };
 
   const handleDelete = async () => {
     const response = await fetch(`${apiURL}/items/${props.item.id}`, {
