@@ -7,7 +7,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
 
    // Update the item, should work for all 
   const handleUpdate = async (id) => {
-    const res = await fetch(`${apiURL}/items/${id}`, {
+    const res = await fetch(`${apiURL}/items/${props.item.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
