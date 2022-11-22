@@ -1,6 +1,7 @@
 import React from 'react';
+import {UpdateForm} from "./UpdateForm";
 
-export const Item = ({item, isSinglePageView, setSinglePageView, setItemObjectTitle}) => {
+export const Item = ({item, items, isSinglePageView, setSinglePageView, newItem, setNewItem, setItemObjectTitle, isAddingItem, setIsAddingItem, fetchItems}) => {
 
   const handleItemClick = () => {
     setSinglePageView(!isSinglePageView);
@@ -16,15 +17,15 @@ export const Item = ({item, isSinglePageView, setSinglePageView, setItemObjectTi
     <img src={item.image} alt={item.title} />
     <p>{item.price}</p>
     <p>{item.description}</p>
-    <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
     <UpdateForm 
     isAddingItem={isAddingItem}
     setIsAddingItem={setIsAddingItem}
     items={items}
-    setItems={setItems}
     newItem={newItem}
     setNewItem={setNewItem}
     fetchItems={fetchItems}
     />
+    <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
+  
   </>
 } 
