@@ -13,9 +13,13 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
         'Content-Type': 'application/json'
       }, 
       body: JSON.stringify({
-        description: ''
-      })
+        title: "",
+        price: "",
+        description: "", 
+        category: "",
+        image: "",
     });
+    
     const updateItem = await res.json();
     setNewItem(updateItem);
   };
