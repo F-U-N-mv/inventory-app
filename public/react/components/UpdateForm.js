@@ -70,7 +70,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
       <h2>Add a New Item</h2>
       <input
         value={newItem.title}
-        onChange={(ev) => setNewItem({...newItem, title: ev.target.value})}
+        onChange={handleUpdateSubmit}
         placeholder="title"
         type="text"
         name="titles"
@@ -79,7 +79,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
       <br></br>
       <input
         value={newItem.price}
-        onChange={(ev) => setNewItem({...newItem, price: ev.target.value})}
+        onChange={handleUpdateSubmit}
         placeholder="price"
         type="text"
         name="price"
@@ -88,7 +88,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
       <br></br>
       <input
         value={newItem.description}
-        onChange={(ev) => setNewItem({...newItem, description: ev.target.value})}
+        onChange={handleUpdateSubmit}
         placeholder="description"
         type="text"
         name="description"
@@ -97,7 +97,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
       <br></br>
       <input
         value={newItem.category}
-        onChange={(ev) => setNewItem({...newItem, category: ev.target.value})}
+        onChange={handleUpdateSubmit}
         placeholder="category"
         type="text"
         name="category"
@@ -106,7 +106,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
       <br></br>
       <input
         value={newItem.image}
-        onChange={(ev) => setNewItem({...newItem, image: ev.target.value})}
+        onChange={handleUpdateSubmit}
         placeholder="image url"
         type="text"
         name="image"
