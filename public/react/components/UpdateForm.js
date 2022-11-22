@@ -13,13 +13,14 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
         'Content-Type': 'application/json'
       }, 
       body: JSON.stringify({
-        title: "",
-        price: "",
-        description: "", 
-        category: "",
-        image: "",
+        title: '',
+        price: '',
+        description: '',
+        category: '',
+        image: ''
+
+      })
     });
-    
     const updateItem = await res.json();
     setNewItem(updateItem);
   };
@@ -47,7 +48,6 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
     // setNewItem(deleteItem);
     setIsAddingItem(false);
   };
-
 
 
   return (
