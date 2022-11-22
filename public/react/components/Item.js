@@ -17,14 +17,14 @@ export const Item = ({item, items, isSinglePageView, setSinglePageView, newItem,
     <img src={item.image} alt={item.title} />
     <p>{item.price}</p>
     <p>{item.description}</p>
-    <UpdateForm 
+    {/* <UpdateForm 
     isAddingItem={isAddingItem}
     setIsAddingItem={setIsAddingItem}
     items={items}
     newItem={newItem}
     setNewItem={setNewItem}
     fetchItems={fetchItems}
-    />
+    /> */}
     <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
   
   </>

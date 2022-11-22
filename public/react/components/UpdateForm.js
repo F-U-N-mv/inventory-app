@@ -27,7 +27,7 @@ export function updateForm({items, newItem, setNewItem, isAddingItem, setIsAddin
 
   const handleUpdateSubmit = (ev) => {
     ev.preventDefault();
-  handleUpdate(newItem);
+    handleUpdate(newItem);
     setNewItem({
       title: "",
       price: "",
