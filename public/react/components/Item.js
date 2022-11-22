@@ -12,10 +12,14 @@ export const Item = ({item, isSinglePageView, setSinglePageView, setItemObjectTi
   }
 
   return <>
-    <h3>{item.title}</h3>
-    <img src={item.image} alt={item.title} />
-    <p>{item.price}</p>
-    <p>{item.description}</p>
-    <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
-  </>
+
+        <div id="itemContainer">
+          <h3 id="itemTitle">{item.title}</h3>
+          <img id="itemImage" src={item.image} alt={item.title} />
+          <p id="itemPrice">{item.price}</p>
+          <p id="itemDescription">{item.description}</p>
+          <button onClick={!isSinglePageView ? handleItemClick : handleBackButton}>{!isSinglePageView ? `Go to item` : 'Back To List'}</button>
+        </div> 
+    
+    </>
 } 
