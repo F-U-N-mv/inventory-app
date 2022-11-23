@@ -2,7 +2,7 @@ const { items} = require('./seedData.js'); // removed `sauces` import
 
 const {sequelize} = require('./db');
 const { Item} = require('./models/index');
-// const {Item} = require('./models/Item');
+
 const seed = async () => {
 
     try {
