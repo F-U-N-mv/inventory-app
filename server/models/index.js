@@ -7,7 +7,6 @@ const {Item} = require('./Item');
 
 
 
-
 module.exports = {
   sequelize,
   Item

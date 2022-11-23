@@ -1,9 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const {Item} = require('../models/Item');
-const { items } = require("../seedData");
+const {Item} = require('../models/Item')
 
-// GET/item
+// GET /items
 router.get("/", async (req, res, next) => {
   try {
     const items = await Item.findAll();
