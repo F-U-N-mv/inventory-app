@@ -1,8 +1,8 @@
-const { sauces, items} = require('./seedData.js'); // removed `sauces` import
+const { items} = require('./seedData.js'); // removed `sauces` import
 
 const {sequelize} = require('./db');
-const {Sauce, Item} = require('./models/index');
-// const {Item} = require('./models/Item');
+const { Item} = require('./models/index');
+
 const seed = async () => {
 
     try {
@@ -10,7 +10,7 @@ const seed = async () => {
         await sequelize.sync({ force: true });
     
         // insert data
-        await Promise.all(sauces.map(sauce => Sauce.create(sauce)));
+        await Promise.all(items.map(item => Item.create(item)));
 
         console.log("db populated!");
     } catch (error) {
